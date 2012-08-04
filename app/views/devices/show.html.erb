@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Reference:</b>
+  <%= @device.reference %>
+</p>
+
+<p>
+  <b>Owner:</b>
+  <%= @device.owner %>
+</p>
+
+<p>
+  <b>Sn:</b>
+  <%= @device.sn %>
+</p>
+
+<p>
+  <b>Category:</b>
+  <%= @device.category %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @device.description %>
+</p>
+
+<p>
+  <b>Delivery date:</b>
+  <%= @device.delivery_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_device_path(@device), :class => 'btn btn-mini btn-action' %> 
+<%= link_to 'Back', devices_path, :class => 'btn btn-mini btn-action' %>

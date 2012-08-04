@@ -1,0 +1,39 @@
+<div class="page-header">
+  <table>
+    <tr>
+      <th><h3>List of devices</h3></th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th><%= link_to 'Create New Device', new_device_path, :class => 'btn btn-primary btn-mini' %></th>
+    </tr>
+  </table>
+</div>
+
+<table>
+  <tr>
+    <th>Reference</th>
+    <th>Owner</th>
+    <th>SN</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Delivery date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @devices.each do |device| %>
+  <tr>
+    <td><%= device.reference %></td>
+    <td><%= device.owner %></td>
+    <td><%= device.sn %></td>
+    <td><%= device.category %></td>
+    <td><%= device.description %></td>
+    <td><%= device.delivery_date %></td>
+    <td><%= link_to 'Show', device, :class => 'btn btn-mini btn-action'%></td>
+    <td><%= link_to 'Edit', edit_device_path(device), :class => 'btn btn-mini btn-action' %></td>
+    <td><%= link_to 'Destroy', device, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger'  %></td>
+  </tr>
+<% end %>
+</table>
