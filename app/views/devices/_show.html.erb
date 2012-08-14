@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+  <div class="well">
+    <table>
+      <tr>
+        <td>Reference: <%= @device.reference %></td>             
+      </tr>      
+      <tr>
+        <td>Owner: <%= @device.owner %></td>
+      </tr>
+      <tr>
+        <td>SN: <%= @device.sn %></td>
+      </tr>
+       <tr>
+        <td>Category: <%= @device.category %></td>
+      </tr>
+      <tr>
+        <td>Description: <%= @device.description %></td>
+      </tr>
+      <tr>
+        <td>Delivery date: %= @device.delivery_date %></td> 
+      </tr>
+      <tr>
+    </table>    
+  </div>
+  <div>
+    <%= link_to 'Edit', edit_device_path(@device), :class => 'btn btn-mini btn-action' %> 
+    <%= link_to 'Back', devices_path, :class => 'btn btn-mini btn-action' %>
+  </div>  

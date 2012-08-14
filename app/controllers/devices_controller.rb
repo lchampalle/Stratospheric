@@ -3,7 +3,6 @@ class DevicesController < ApplicationController
   # GET /devices.json
   def index
     @devices = Device.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @devices }
@@ -14,6 +13,7 @@ class DevicesController < ApplicationController
   # GET /devices/1.json
   def show
     @device = Device.find(params[:id])
+    logger.info("#{@device.to_yaml}")
 
     respond_to do |format|
       format.html # show.html.erb
@@ -73,11 +73,17 @@ class DevicesController < ApplicationController
   # DELETE /devices/1.json
   def destroy
     @device = Device.find(params[:id])
+    logger.info("#{@device.to_yaml}")    
     @device.destroy
 
     respond_to do |format|
       format.html { redirect_to devices_url }
       format.json { head :no_content }
     end
+  end
+  
+  def secure
+    @device = Device.find(params[:id])
+    logger.info("#{@device.to_yaml}")
   end
 end

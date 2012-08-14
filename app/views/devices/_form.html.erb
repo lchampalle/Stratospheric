@@ -2,7 +2,6 @@
   <% if @device.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@device.errors.count, "error") %> prohibited this device from being saved:</h2>
-
       <ul>
       <% @device.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
@@ -10,32 +9,50 @@
       </ul>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :reference %><br />
-    <%= f.text_field :reference %>
-  </div>
-  <div class="field">
-    <%= f.label :owner %><br />
-    <%= f.text_field :owner %>
-  </div>
-  <div class="field">
-    <%= f.label :sn %><br />
-    <%= f.text_field :sn %>
-  </div>
-  <div class="field">
-    <%= f.label :category %><br />
-    <%= f.text_field :category %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :delivery_date %><br />
-    <%= f.date_select :delivery_date %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  
+  <br>
+  </br>
+  <div class="well">
+    <table>
+      <tr>
+        <td><%= f.label :reference%></td>
+        <td><%= f.label :owner %></td>
+        <td><%= f.label :sn %></td>
+        <td></td>
+        
+      </tr>      
+      <tr>
+        <td><%= f.text_field :reference %></td>
+        <td><%= f.text_field :owner %></td>
+        <td><%= f.text_field :sn %></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <td><%= f.label :category %></td>
+        <td><%= f.label :description %></td>
+        <td><%= f.label :delivery_date %></td>
+        <td></td>
+        
+      </tr>      
+      <tr>
+        <td><%= f.text_field :category %></td>
+        <td><%= f.text_field :description %></td>
+        <td><%= f.text_field :delivery_date %></td>
+        <td></td>        
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+          <div>
+            <%= link_to 'Back', devices_path, :class => 'btn btn-mini btn-action' %>
+            <%= f.submit :class => 'btn btn-primary btn-mini'%>
+          </div>
+        </td>        
+      </tr>      
+    </table>    
   </div>
 <% end %>
+

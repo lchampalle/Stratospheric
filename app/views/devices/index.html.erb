@@ -1,16 +1,16 @@
 <div class="page-header">
-  <table>
+  <!--table>
     <tr>
-      <th><h3>List of devices</h3></th>
+      <th><h3>Devices</h3></th>
       <th></th>
       <th></th>
       <th></th>
-      <th><%= link_to 'Create New Device', new_device_path, :class => 'btn btn-primary btn-mini' %></th>
+      <th><%= link_to 'New Device', new_device_path, :class => 'btn btn-primary btn-mini' %></th>
     </tr>
-  </table>
+  </table-->
 </div>
 
-<table>
+<table class="table table-striped"> 
   <tr>
     <th>Reference</th>
     <th>Owner</th>
@@ -31,9 +31,21 @@
     <td><%= device.category %></td>
     <td><%= device.description %></td>
     <td><%= device.delivery_date %></td>
-    <td><%= link_to 'Show', device, :class => 'btn btn-mini btn-action'%></td>
-    <td><%= link_to 'Edit', edit_device_path(device), :class => 'btn btn-mini btn-action' %></td>
-    <td><%= link_to 'Destroy', device, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini btn-danger'  %></td>
+	<!--td align="right"><%= button_to 'Remove', device, :method => :delete, :class => 'btn btn-danger btn-mini'%></td-->		  
+	<td>
+		<%= link_to 'Show', device, :class => 'btn btn-action btn-mini'%>
+		<%= link_to 'Edit', edit_device_path(device), :class => 'btn btn-action btn-mini'%>
+		<%= link_to 'Remove', device, :method => :secure, :class => 'btn btn-danger btn-mini'%>
+	</td>	    
   </tr>
 <% end %>
+  <tr>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th>
+    <th></th> 
+    <th>  <%= link_to 'New Device', new_device_path, :class => 'btn btn-primary btn-mini' %></th>
+  </tr>
 </table>
